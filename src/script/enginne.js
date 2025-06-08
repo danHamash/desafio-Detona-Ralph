@@ -35,6 +35,10 @@ function countDown() {
   }
 }
 
+function playsound(){
+    let audio = new Audio("./src/audios/hit.m4a");
+    audio.play()
+}
 function randomSquare() {
   state.view.squares.forEach((square) => {
     square.classList.remove("enemy");
@@ -92,6 +96,7 @@ function addListinerHitBox() {
         state.values.result++;
         state.view.score.textContent = state.values.result;
         state.values.hitPosition = null;
+        playsound();
       } else if (square.id !== state.values.hitPosition) {
         state.values.pointLife--;
         state.view.life.textContent = state.values.pointLife;
