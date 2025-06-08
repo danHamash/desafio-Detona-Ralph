@@ -8,7 +8,7 @@ const state = {
   },
   values: {
     timerId: null,
-    gameVelocite: 550,
+    gameVelocite: 500,
     hitPosition: 0,
     result: 0,
     pointLife: 3,
