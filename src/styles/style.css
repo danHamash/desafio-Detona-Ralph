@@ -149,7 +149,7 @@ footer{
     width: 1200px;
     margin: 0 auto;
 }
-@media (min-width: 320px) and (max-width: 500px){
+@media (min-width: 320px) and (max-width: 1220px){
     
 .game_over{
     font-size: 1rem;
