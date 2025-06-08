@@ -37,6 +37,7 @@ function countDown() {
 
 function playsound(){
     let audio = new Audio("./src/audios/hit.m4a");
+    audio.volume = 0.1;
     audio.play()
 }
 function randomSquare() {
