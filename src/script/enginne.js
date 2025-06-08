@@ -8,7 +8,7 @@ const state = {
   },
   values: {
     timerId: null,
-    gameVelocite: 500,
+    gameVelocite: 800,
     hitPosition: 0,
     result: 0,
     pointLife: 3,
@@ -35,8 +35,8 @@ function countDown() {
   }
 }
 
-function playsound(){
-    let audio = new Audio("./src/audios/hit.m4a");
+function playsound(audioName){
+    let audio = new Audio(`./src/audios/${audioName}.m4a`);
     audio.volume = 0.1;
     audio.play()
 }
@@ -65,7 +65,9 @@ function gameOver() {
     gameOverElement.classList.add("show");
     gameOverElement.textContent = "Game Over!";
     restartBtn.style.display = "block";
+    playsound("GameOver")
   }
+  
 }
 
 function restartGame() {
@@ -97,10 +99,11 @@ function addListinerHitBox() {
         state.values.result++;
         state.view.score.textContent = state.values.result;
         state.values.hitPosition = null;
-        playsound();
+        playsound("hit");
       } else if (square.id !== state.values.hitPosition) {
         state.values.pointLife--;
         state.view.life.textContent = state.values.pointLife;
+        playsound("losse");
         gameOver();
       }
     });
