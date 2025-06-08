@@ -37,7 +37,7 @@ function countDown() {
 
 function playsound(audioName){
     let audio = new Audio(`./src/audios/${audioName}.m4a`);
-    audio.volume = 0.1;
+    audio.volume = 0.3;
     audio.play()
 }
 function randomSquare() {
@@ -99,7 +99,7 @@ function addListinerHitBox() {
         state.values.result++;
         state.view.score.textContent = state.values.result;
         state.values.hitPosition = null;
-        playsound("hit");
+        playsound("succes");
       } else if (square.id !== state.values.hitPosition) {
         state.values.pointLife--;
         state.view.life.textContent = state.values.pointLife;
